@@ -1,34 +1,26 @@
 ﻿
 -- Base de Datos 
-CREATE DATABASE [SistemaUsuarios];
+CREATE DATABASE SistemaUsuarios;
 GO
 
-USE [SistemaUsuarios];
+USE SistemaUsuarios;
 GO
 
-
-CREATE TABLE [dbo].[usuarios](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[nombre] [nvarchar](50) NULL,
-	[apellido] [nvarchar](50) NULL,
-	[username] [nvarchar](50) NULL,
-	[password] [nvarchar](50) NULL,
-	[email] [nvarchar](50) NULL,
+CREATE TABLE usuarios (
+    id INT IDENTITY(1,1) NOT NULL,
+    nombre VARCHAR(50) NULL,
+    apellido VARCHAR(50) NULL,
+    username VARCHAR(50) NULL,
+    password CHAR(50) NULL, -- Se usa CHAR para longitud fija
+    email VARCHAR(50) NULL,
     PRIMARY KEY (id)
 );
 GO
 
-SET IDENTITY_INSERT [dbo].[usuarios] ON;
+SET IDENTITY_INSERT usuarios ON;
 
-INSERT INTO [dbo].[usuarios] ([id], [nombre], [apellido], [username], [password], [email]) 
-VALUES (1, N'Pedro', N'Ramieres', N'pedrami', N'123', N'ped@gmail.com');
+INSERT INTO usuarios (id, nombre, apellido, username, password, email) 
+VALUES (1, 'Pedro', 'Ramieres', 'pedrami', '123', 'ped@gmail.com');
 
-INSERT INTO [dbo].[usuarios] ([id], [nombre], [apellido], [username], [password], [email]) 
-VALUES (2, N'Hect', N'ramiro', N'adad', N'123', N'fef@gmail.com');
-
-SET IDENTITY_INSERT [dbo].[usuarios] OFF;
-GO
-
---Verificar los Datos
-SELECT * FROM usuarios;
-
+INSERT INTO usuarios (id, nombre, apellido, username, password, email) 
+VALUES (2, 'Hect', 'ramiro', 'adad', '123', 'fef@gmail.com');
