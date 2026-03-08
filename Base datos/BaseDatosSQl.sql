@@ -1,4 +1,5 @@
 ﻿
+
 -- Base de Datos 
 CREATE DATABASE SistemaUsuarios;
 GO
@@ -11,7 +12,7 @@ CREATE TABLE usuarios (
     nombre VARCHAR(50) NULL,
     apellido VARCHAR(50) NULL,
     username VARCHAR(50) NULL,
-    password CHAR(50) NULL, -- Se usa CHAR para longitud fija
+    password CHAR(50) NULL, 
     email VARCHAR(50) NULL,
     PRIMARY KEY (id)
 );
